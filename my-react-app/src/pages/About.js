@@ -5,7 +5,7 @@ export default function About() {
   return (
     <main className="about-page">
       <header className="about-hero">
-        <img className="about-hero-img" src="/assets/icon/about-hero.jpg"></img>
+        <img className="about-hero-img" src="/assets/icon/about-hero.jpg" alt="Volunteers caring for rescued pets at Pet Heaven Society" />
         <div className="about-hero-inner">
           <h1>About Pet Heaven Society</h1>
           <p className="lead">
@@ -68,7 +68,7 @@ export default function About() {
         </p>
         <div className="visit-actions">
           <Link to="/register" className="btn btn-ghost">Become a Member</Link>
-          <Link to="/releasepetform" className="btn btn-outline">Release a Pet</Link>
+          <Link to="/release" className="btn btn-outline">Release a Pet</Link>
         </div>
       </section>
     </main>
