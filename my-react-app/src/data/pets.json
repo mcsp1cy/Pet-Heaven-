@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "type": "Dog",
+        "species": "Labrador",
+        "name": "Duke",
+        "age": 4,
+        "image": "/assets/pets/dog1.jpg"
+    },
+    {
+        "id": 2,
+        "type": "Cat",
+        "species": "Siamese",
+        "name": "Whiskers",
+        "age": 2,
+        "image": "/assets/pets/cat1.jpg"
+    },
+    {
+        "id": 3,
+        "type": "Dog",
+        "species": "Pit Bull",
+        "name": "Bella",
+        "age": 3,
+        "image": "/assets/pets/dog2.jpg"
+    },
+    {
+        "id": 4,
+        "type": "Cat",
+        "species": "British Shorthair",
+        "name": "Luna",
+        "age": 1,
+        "image": "/assets/pets/cat2.jpg"
+    }
+]
