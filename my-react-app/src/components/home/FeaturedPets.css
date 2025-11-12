@@ -1,0 +1,73 @@
+/* FeaturedPets styling */
+.featured .pet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  align-items: start;
+  margin-top: 1rem;
+}
+
+/* make featured cards visually distinct and full-width images */
+.featured .pet-card {
+  box-sizing: border-box; 
+  position: relative;     
+  max-width: 100%;
+  padding: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(11,22,25,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+}
+
+/* target both plain <img> and .pet-image used elsewhere */
+.featured .pet-card img,
+.featured .pet-card .pet-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* card text area */
+.featured .pet-card h3,
+.featured .pet-card p {
+  padding: 0.75rem 1rem;
+  margin: 0;
+}
+.featured .pet-card h3 {
+  font-size: 1.05rem;
+  color: #111827;
+}
+.featured .pet-card p {
+  color: var(--muted, #6b7280);
+  font-size: 0.95rem;
+}
+
+/* actions */
+.featured .pet-actions {
+  display: flex;
+  gap: 0.5rem;              
+  justify-content: flex-end;  
+  padding: 0.75rem 1rem 1rem;
+  width: 100%;                /* ensure actions don't exceed card width */
+  box-sizing: border-box;   
+}
+
+/* prevent oversized buttons from overflowing */
+.featured .pet-actions .btn {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  max-width: 48%;
+}
+
+/* slightly smaller image on narrow screens */
+@media (max-width: 520px) {
+  .featured .pet-card img,
+  .featured .pet-card .pet-image {
+    height: 160px;
+  }
+}
