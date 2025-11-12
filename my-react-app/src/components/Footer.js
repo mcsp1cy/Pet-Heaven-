@@ -34,15 +34,15 @@ export default function Footer() {
         <div className="footer-col social">
           <h4>Follow us</h4>
           <nav aria-label="social links" className="social-links">
-            <a href="#" aria-label="Instagram" title="Instagram">
+            <a href="https://instagram.com" aria-label="Instagram" title="Instagram">
               <img src="/assets/logo/instagram.png" alt="" className="social-icon" />
               <span>Instagram</span>
             </a>
-            <a href="#" aria-label="Twitter" title="Twitter">
+            <a href="https://twitter.com" aria-label="Twitter" title="Twitter">
               <img src="/assets/logo/twitter.png" alt="" className="social-icon" />
               <span>Twitter</span>
             </a>
-            <a href="#" aria-label="TikTok" title="TikTok">
+            <a href="https://tiktok.com" aria-label="TikTok" title="TikTok">
               <img src="/assets/logo/tiktok.png" alt="" className="social-icon" />
               <span>TikTok</span>
             </a>
