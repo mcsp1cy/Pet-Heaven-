@@ -68,7 +68,7 @@ export default function About() {
         </p>
         <div className="visit-actions">
           <Link to="/register" className="btn btn-ghost">Become a Member</Link>
-          <Link to="/release" className="btn btn-outline">Release a Pet</Link>
+          <Link to="/releasepetform" className="btn btn-outline">Release a Pet</Link>
         </div>
       </section>
     </main>
