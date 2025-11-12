@@ -1,0 +1,233 @@
+/* form styles shared by Register / AdoptPetForm / ReleasePetForm */
+
+:root{
+  --teal: #0b6b62;
+  --teal-600: #065a50;
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --radius: 12px;
+}
+
+.register-page {
+  padding: 2.25rem 0;
+  display: flex;
+  justify-content: center;
+  color: #0f1724;
+}
+
+.form-lead {
+  max-width: 720px;
+  margin: 0.25rem auto 1rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* form card */
+.form-panel {
+  width: 100%;
+  max-width: 720px;
+  background: linear-gradient(180deg, var(--card-bg), #fbfbfb);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: 0 18px 44px rgba(11,22,25,0.06);
+  border: 1px solid rgba(11,107,98,0.04);
+  display: grid;
+  gap: 0.75rem;
+}
+
+/* labelled row */
+.form-row {
+  display: grid;
+  gap: 0.35rem;
+}
+
+/* label */
+.form-label {
+  font-size: 0.92rem;
+  color: #0f1724;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* checkbox row tweak */
+.checkbox-row .checkbox-wrap {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+.checkbox-wrap input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--teal);
+}
+.checkbox-label {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* inputs */
+.form-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.7rem 0.95rem;
+  border-radius: 10px;
+  border: 1px solid rgba(11,107,98,0.09);
+  background: linear-gradient(180deg, #fff, #fcfcfc);
+  color: #0f1724;
+  font-size: 0.95rem;
+  box-shadow: 0 8px 26px rgba(11,22,25,0.04);
+  transition: box-shadow 140ms ease, border-color 140ms ease, transform 140ms ease;
+  outline: none;
+  resize: vertical;
+}
+.form-input:focus {
+  border-color: rgba(11,107,98,0.26);
+  box-shadow: 0 10px 30px rgba(6,90,80,0.08);
+  transform: translateY(-1px);
+}
+
+/* textarea sizing */
+textarea.form-input {
+  min-height: 110px;
+  line-height: 1.45;
+}
+
+/* actions */
+.form-actions {
+  display: flex;
+  gap: 0.65rem;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+/* buttons */
+.form-panel .btn {
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.form-panel .btn-primary {
+  background: linear-gradient(180deg, var(--teal), var(--teal-600));
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(11,107,98,0.12);
+  border: none;
+}
+.form-panel .btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(11,107,98,0.09);
+  color: var(--teal);
+}
+
+/* status messages */
+.form-success {
+  margin-top: 0.5rem;
+  color: #065a50;
+  background: rgba(6,90,80,0.06);
+  padding: 0.65rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 700;
+}
+.form-error {
+  margin-top: 0.5rem;
+  color: #9b1c1c;
+  background: rgba(155,28,28,0.06);
+  padding: 0.65rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+/* page header with background image */
+.page-header {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 2.25rem 1.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+
+  box-shadow: 0 18px 44px rgba(11,22,25,0.06);
+}
+
+/* subtle dark overlay to keep text readable */
+.page-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(6,90,80,0.32), rgba(6,90,80,0.14));
+}
+
+/* ensure header content sits above overlay */
+.page-header > * {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+
+/* heading & lead tuning */
+.page-header h1 {
+  margin: 0 0 0.35rem 0;
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  text-shadow: 0 8px 20px rgba(2,6,12,0.45);
+  transform: translateY(10px);
+}
+.page-header .form-lead {
+  color: rgba(255,255,255,0.92);
+  max-width: 860px;
+  margin: 0.9rem auto 0; 
+  line-height: 1.5;
+  text-shadow: 0 6px 18px rgba(2,6,12,0.28);
+  transition: margin 180ms ease, transform 180ms ease;
+  transform: translateY(5px); 
+}
+
+/* header variant with no image */
+.page-header.no-image {
+  background: linear-gradient(180deg, rgba(6,90,80,0.18), rgba(11,107,98,0.06));
+  padding: 2.25rem 1.25rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 36px rgba(8,15,22,0.06);
+  color: #0f332d; 
+  border: 1px solid rgba(6,90,80,0.06);
+}
+
+.page-header.no-image h1 {
+  color: #043e36; /* stronger heading color */
+  margin: 0 0 0.35rem 0;
+  text-shadow: none;
+}
+
+.page-header.no-image .form-lead {
+  color: #234642; /* deeper muted copy color for readability */
+  margin-top: 0.6rem;
+  max-width: 860px;
+  text-align: center;
+  line-height: 1.5;
+  transform: none;
+}
+
+/* responsive: reduce padding on small screens */
+@media (max-width: 720px) {
+  .form-panel { padding: 1rem; max-width: 92%; }
+  .form-actions { flex-direction: column; align-items: stretch; }
+  .form-panel .btn { width: 100%; }
+  .page-header { padding: 1.5rem 0.75rem; background-position: center 45%; }
+  .page-header h1 { font-size: 1.4rem; }
+}

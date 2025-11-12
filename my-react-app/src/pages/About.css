@@ -1,0 +1,223 @@
+/* About page styling (updated hero with full-bleed image + overlay) */
+
+.container {
+  max-width: 1100px;
+  width: min(1100px, 96%);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* HERO: full-bleed background image with centered text */
+.about-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;              
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0 0 1.5rem 0;
+  padding: 0;                  
+  background: #052f2a;       
+}
+
+.about-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          
+  object-position: center 35%;    
+  display: block;
+  z-index: 0;
+  filter: saturate(0.98) contrast(1) brightness(0.6); /* darken for text contrast */
+  transition: transform 400ms ease;
+}
+
+/* overlay to further increase contrast for text */
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(6,90,80,0.45) 0%, rgba(6,90,80,0.20) 40%, rgba(0,0,0,0.12) 100%);
+}
+
+/* inner content sits above image and overlay */
+.about-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 980px;
+  padding: 3.25rem 1rem;
+  text-align: center;
+  color: #ffffff;
+  transform: translateY(150px);
+}
+
+/* heading and lead tuned for overlay */
+.about-hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  line-height: 1.05;
+  text-shadow: 0 8px 24px rgba(2,6,12,0.5);
+  color: #fff;
+}
+
+.lead {
+  margin: 0 0 1rem;
+  color: rgba(255,255,255,0.92);
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  text-shadow: 0 6px 18px rgba(2,6,12,0.32);
+}
+
+/* buttons on hero */
+.about-hero .btn {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+/* remaining sections */
+.mission, .services, .visit { padding: 2rem 0; }
+.mission p, .visit p { color: #374151; line-height: 1.5; max-width: 78ch; }
+
+#mission-heading {
+  color: #0f1724; /* deep slate / teal-leaning for strong contrast */
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.15;
+}
+
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+.facility {
+  background: #fff;
+  border-radius: 12px;
+  padding: 0.75rem;
+  box-shadow: 0 10px 24px rgba(8,15,22,0.06);
+  text-align: left;
+}
+.facility img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.facility h3 { margin: 0 0 0.35rem; color: #0f1724; }
+.facility p { margin: 0; color: #6b7280; }
+
+.services ul {
+  margin: 0.5rem 0 0 1.1rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.visit .visit-actions { margin-top: 0.75rem; display:flex; gap:0.6rem; flex-wrap:wrap; }
+
+/* MISSION */
+.mission {
+  max-width: 980px;
+  margin: 0 auto 1.5rem;
+  padding: 0; /* inner padding handled below */
+}
+.mission > p {
+  background: linear-gradient(180deg,#ffffff,#fbfbfb);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 12px 28px rgba(8,15,22,0.06);
+  border-left: 6px solid #0b6b62; /* teal accent */
+  color: #334155;
+  line-height: 1.6;
+  font-size: 1.02rem;
+  margin: 0;
+  max-width: 980px;
+  margin: 0 auto;    
+  display: block;
+}
+
+/* SERVICES */
+.services.container {
+  max-width: 1100px;
+  width: min(1100px, 96%);
+  margin: 0 auto 1.5rem;
+  padding: 0;
+}
+.services h2 { margin-bottom: 0.6rem; color: #0f1724; }
+.services ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.9rem;
+}
+.services ul li {
+  background: linear-gradient(180deg,#fff,#fbfbfb);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 8px 20px rgba(8,15,22,0.04);
+  border: 1px solid rgba(11,107,98,0.03);
+  color: #475569;
+  font-size: 0.96rem;
+}
+
+/* VISIT — contact panel with actions */
+.visit.container {
+  max-width: 1100px;
+  width: min(1100px, 96%);
+  margin: 0 auto 2rem;
+  padding: 0;
+}
+.visit > p {
+  background: linear-gradient(180deg,#fff,#fbfbfb);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 12px 28px rgba(8,15,22,0.06);
+  border: 1px solid rgba(11,107,98,0.03);
+  color: #334155;
+  line-height: 1.6;
+  margin: 0 0 0.75rem 0;
+}
+.visit .visit-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/* small emphasis for contact links */
+.visit a[href^="tel"], .visit a[href^="mailto"] {
+  color: #0b6b62;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* responsive: stack and increase spacing */
+@media (max-width: 920px) {
+  .about-hero { min-height: 42vh; }
+  .about-hero-inner { padding: 2rem 1rem; }
+  .about-hero h1 { font-size: 1.8rem; }
+}
+@media (max-width: 720px) {
+  .about-hero { padding: 2rem 0; }
+  .facility img { height: 140px; }
+}
+@media (max-width: 520px) {
+  .about-hero { min-height: 36vh; }
+  .about-hero-inner { padding: 1.25rem 0.75rem; }
+  .facility img { height: 140px; }
+}
+@media (max-width: 720px) {
+  .mission > p,
+  .services ul li,
+  .visit > p {
+    padding: 1rem;
+  }
+  .services ul { gap: 0.75rem; }
+  .visit .visit-actions { justify-content: flex-start; }
+}
